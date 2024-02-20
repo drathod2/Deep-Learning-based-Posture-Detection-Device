@@ -1,0 +1,72 @@
+<!-- <!doctype html>
+<html>
+<head>
+<script src='asyncReq.js'></script>
+<script>
+function updateData()
+{
+  loadURL("./getData", function(data){
+    document.getElementById("results").innerHTML = data;
+  })
+}
+function start()
+{
+  setInterval("updateData()", 300);
+}
+</script>
+</head>
+<body onload='start()'>
+<h1> IMU Data </h1>
+<div id='results'> </div>
+</body>
+</html> -->
+
+<!-- <!DOCTYPE html>
+<html>
+<head>
+  <script src='asyncReq.js'></script>
+  <script>
+    function updateData() {
+      loadURL("./getData", function(data) {
+        var jsonData = JSON.parse(data);
+        document.getElementById("results").innerHTML =
+          "x: " + jsonData.x + "<br>yy: " + jsonData.yy + "<br>z: " + jsonData.z + "<br>pos: " + jsonData.pos;
+      });
+    }
+
+    function start() {
+      setInterval(updateData, 300);
+    }
+  </script>
+</head>
+<body onload='start()'>
+  <h1> IMU Data </h1>
+  <div id='results'> </div>
+</body>
+</html> -->
+
+<!DOCTYPE html>
+<html>
+<head>
+  <script src='asyncReq.js'></script>
+  <script>
+    function updateData() {
+      loadURL("/getData", function(data) {
+        var jsonData = JSON.parse(data);
+        document.getElementById("results").innerHTML =
+          "x_acc: " + jsonData.x_acc + "<br>y_acc: " + jsonData.y_acc + "<br>z_acc: " + jsonData.z_acc + 
+          "<br>x_gyro: " + jsonData.x_gyro + "<br>y_gyro: " + jsonData.y_gyro + "<br>z_gyro: " + jsonData.z_gyro + "<br>Activity: " + jsonData.Activity;
+      });
+    }
+
+    function start() {
+      setInterval(updateData, 300);
+    }
+  </script>
+</head>
+<body onload='start()'>
+  <h1> IMU Data and Activity Recognition </h1>
+  <div id='results'> </div>
+</body>
+</html>
+
